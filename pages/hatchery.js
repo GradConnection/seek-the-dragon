@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import Head from 'next/head'
+import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css'
 import Hatching from '../components/hatchery/hatching';
 
 export default function Hatchery() {
 
   const [step, setStep] = useState(0);
-
 
   console.log("hatchery step", step)
 
@@ -34,7 +34,7 @@ export default function Hatchery() {
         <div className={styles.grid}>
           {step <= 3 && <Hatching step={step} setStep={setStep} />}
           {step > 3 && (
-            <a href="/hatched-welcome/">Continue</a>
+            <Link href="/hatched-welcome/">Continue</Link>
           )}
         </div>
       </main>

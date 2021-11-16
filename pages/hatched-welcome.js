@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import welcome from '../components/hatchery/welcome';
@@ -7,9 +8,6 @@ import welcome from '../components/hatchery/welcome';
 export default function Hatchery() {
 
   const [name, setName] = useState("Dragon");
-
-
-  console.log("welc name", name);
 
   return (
     <div className={styles.container}>
@@ -39,7 +37,7 @@ export default function Hatchery() {
           </div>
           <div className={styles.card}>
             <input value={name} onChange={(e) => setName(e.target.value)} />
-            <a href="/next-step/">Save</a>
+            <Link href="/next-step/">Save</Link>
           </div>
         </div>
       </main>
