@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import dragonmap from "/public/dragonmap.webp";
 import Image from "next/image";
+import Dragon from "/Components/shared/Dragon";
 
 // import dragonmap from "/public/dragonmap.webp";
 
@@ -11,7 +12,7 @@ function Map() {
     // Make circle
     function makeCircle(context, name, x, y, color, circleSize) {
       context.font = "30px Arial";
-      context.fillStyle = "white";
+      context.fillStyle = color;
       context.fillText(name, x - circleSize, y - circleSize - 10);
       context.beginPath();
       context.lineWidth = 5;
@@ -32,19 +33,19 @@ function Map() {
 
     var elements = [];
     elements.push({
-      name: "Forest",
-      color: "#05EFFF",
+      name: "Power Up",
+      color: "#FFF",
       circleSize: 50,
       x: 250,
       y: 200,
       clicked: function () {
         // alert("This Forest circle has been clicked");
-        Router.push("/");
+        Router.push("/powerup");
       },
     });
     elements.push({
       name: "Castle",
-      color: "#05EFFF",
+      color: "#FFF",
       circleSize: 50,
       x: 790,
       y: 660,
@@ -55,12 +56,42 @@ function Map() {
     });
     elements.push({
       name: "Profile",
-      color: "#05EFFF",
+      color: "#FFF",
       circleSize: 50,
       x: 525,
-      y: 950,
+      y: 930,
       clicked: function () {
         Router.push("/profile");
+      },
+    });
+    elements.push({
+      name: "Recharge",
+      color: "#FFF",
+      circleSize: 50,
+      x: 160,
+      y: 665,
+      clicked: function () {
+        Router.push("/recharge");
+      },
+    });
+    elements.push({
+      name: "Quests",
+      color: "#000",
+      circleSize: 110,
+      x: 1110,
+      y: 180,
+      clicked: function () {
+        Router.push("/quests");
+      },
+    });
+    elements.push({
+      name: "Invite Friends",
+      color: "#FFF",
+      circleSize: 60,
+      x: 460,
+      y: 430,
+      clicked: function () {
+        Router.push("/friends");
       },
     });
     elements.forEach(function (element) {
@@ -99,6 +130,9 @@ function Map() {
         alt="Map"
       />
       <canvas style={{ position: "absolute", top: 0 }} id="canvas"></canvas>
+      <div style={{ position: "absolute", top: 760, right: 370 }}>
+        <Dragon />
+      </div>
     </div>
   );
 }
