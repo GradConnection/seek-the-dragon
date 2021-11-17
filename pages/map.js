@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 import dragonmap from "/public/dragonmap.webp";
 import Image from "next/image";
+import Dragon from "/Components/shared/Dragon";
 
 // import dragonmap from "/public/dragonmap.webp";
 
@@ -73,6 +74,16 @@ function Map() {
         Router.push("/recharge");
       },
     });
+    elements.push({
+      name: "Dragon Quest",
+      color: "#05EFFF",
+      circleSize: 50,
+      x: 950,
+      y: 160,
+      clicked: function () {
+        Router.push("/dragonquest");
+      },
+    });
     elements.forEach(function (element) {
       var circle = new makeCircle(
         context,
@@ -109,6 +120,7 @@ function Map() {
         alt="Map"
       />
       <canvas style={{ position: "absolute", top: 0 }} id="canvas"></canvas>
+      <Dragon style={{ position: "absolute", top: 500, right: 500 }} />
     </div>
   );
 }
