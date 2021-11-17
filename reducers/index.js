@@ -3,7 +3,7 @@ export const ContextApp = React.createContext();
 
 export const initialState = {
   profile: {
-    level: 0,
+    level: 1,
     name: null,
   },
 };
