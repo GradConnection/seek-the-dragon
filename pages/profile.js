@@ -1,19 +1,19 @@
-import React, { useEffect, useContext, useState } from 'react';
-import { ContextApp } from '../reducers';
-import styles from '../styles/Home.module.css';
-import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image';
-import Dragon from '../components/shared/Dragon';
-import emptyStar from '../public/star_empty.png';
-import filledStar from '../public/star_filled.png';
-import animatedStar from '../public/star_animated.gif';
+import React, { useEffect, useContext, useState } from "react";
+import { ContextApp } from "../reducers";
+import styles from "../styles/Home.module.css";
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import Dragon from "../components/shared/Dragon";
+import emptyStar from "../public/star_empty.png";
+import filledStar from "../public/star_filled.png";
+import animatedStar from "../public/star_animated.gif";
 
 function Profile() {
   const { state } = useContext(ContextApp);
   let name = state.profile.name;
   let level = state.profile.level;
-  let secretName = 'The Future Great Architech';
+  let secretName = "The Future Great Architech";
   const [animateStar, setAnimateStar] = useState(true);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ function Profile() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className="text-2xl">Hey, {name}</h1>
-        <Dragon />
-        <p className={'text-lg font-500'}>Level {level}</p>
+        <Dragon width={700} height={700} />
+        <p className={"text-lg font-500"}>Level {level}</p>
         <div className="flex justify-center m-4">
           <Image
             className="p-3"

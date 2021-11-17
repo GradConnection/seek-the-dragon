@@ -1,5 +1,5 @@
-import styles from "./QuestList.module.css"
-import QuestItem from "./QuestItem"
+import styles from "./QuestList.module.css";
+import QuestItem from "./QuestItem";
 
 const mockJobs1 = [
   {
@@ -26,7 +26,7 @@ const mockJobs1 = [
     hasInterview: true,
     questResult: "fail",
   },
-]
+];
 
 const mockJobs2 = [
   {
@@ -53,7 +53,7 @@ const mockJobs2 = [
     hasInterview: false,
     questResult: "pending",
   },
-]
+];
 
 function QuestList() {
   return (
@@ -86,7 +86,7 @@ function QuestList() {
         </ul>
       </div>
     </div>
-  )
+  );
 }
 
-export default QuestList
+export default QuestList;
