@@ -23,14 +23,11 @@ const QuestItem = ({ job }) => {
           id="my-modal"
         ></div>
       )}
-      {"test" + showModal + " test"}
 
-      {/* position: fixed;
-    z-index: 1; */}
       {showModal && (
         <div
           style={{ position: "fixed", zIndex: 2 }}
-          className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+          className="relative top-40 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
         >
           <div className="mt-3 text-center">
             <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">

@@ -2,3 +2,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.menu {
+  border-radius: 50%;
+  background-color: rgb(9, 121, 241);
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  position: relative;
+  left: 1000px;
+  top: 50px;
+}
+
+.circle {
+  margin: 50px;
+  border-radius: 50%;
+  background-color: rgb(9, 121, 241);
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.menu div {
+  text-align: center;
+}
+
+.circle div {
+  text-align: center;
+}

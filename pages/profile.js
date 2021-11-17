@@ -25,6 +25,11 @@ function Profile() {
 
   return (
     <div className={styles.container}>
+      <div className="menu">
+        <div>
+          <Link href="/map">Menu</Link>
+        </div>
+      </div>
       <main className={styles.main}>
         <h1 className="text-2xl">Hey, {name}</h1>
         <Dragon width={700} height={700} />
