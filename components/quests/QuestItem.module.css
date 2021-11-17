@@ -1,0 +1,75 @@
+.questItemContainer {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.questItemContainer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  color: #000;
+}
+.questItemContainer ul:before {
+  border-left: none;
+}
+.questItemContainer ul li {
+  position: relative;
+  margin: 0px;
+  padding: 0px 0px 30px 30px;
+  background-image: url("../../public/icon_fire_flame.svg");
+  background-repeat: no-repeat;
+  background-size: 50px;
+}
+
+.job {
+  display: flex;
+  flex-direction: row;
+}
+
+.jobDetails {
+  width: 200px;
+  margin-left: 10px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.roleTitle {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+  margin: 0px 20px;
+}
+
+.hasApplied {
+  content: url("../../public/icon_checked.svg");
+}
+
+.hasNotApplied {
+  content: url("../../public/icon_pause.png");
+}
+
+.hasInterview {
+  content: url("../../public/icon_dragon_active.svg");
+}
+
+.hasNoInterview {
+  content: url("../../public/icon_dragon_inactive.svg");
+}
+
+.success {
+  content: url("../../public/icon_trophy_success.svg");
+}
+
+.pending {
+  content: url("../../public/icon_trophy_pending.svg");
+}
+
+.fail {
+  content: url("../../public/icon_dragon_sad.png");
+}
