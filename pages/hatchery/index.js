@@ -1,12 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from '../../styles/Home.module.css';
 import Hatching from '../../components/hatchery/hatching';
-import Dragon from '../../components/shared/Dragon';
+// import Dragon from '../../components/shared/Dragon';
+import { useRouter } from 'next/router';
 
 export default function Hatchery() {
   const [step, setStep] = useState(0);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (step == 3) {
+      setTimeout(() => {
+        router.push('/hatchery/born/');
+      }, 1500);
+    }
+  }, [step, router]);
 
   return (
     <div className={styles.container}>
@@ -23,23 +33,10 @@ export default function Hatchery() {
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome to SEEK The Dragon</h1>
 
-        {step <= 3 && <p className={styles.description}>Click on the egg </p>}
+        <p className={styles.description}>Click on the egg </p>
 
         <div className={styles.grid}>
-          {step <= 3 && <Hatching step={step} setStep={setStep} />}
-          {step > 3 && (
-            <>
-              <h2 className="text-base font-bold text-4xl pb-6">
-                🎉 Congrats, your dragon was born! 🎉
-              </h2>
-              <p className={styles.description}>
-                <Dragon level={1} />
-              </p>
-              <p className={styles.description}>
-                <Link href="/hatchery/welcome/">Continue</Link>
-              </p>
-            </>
-          )}
+          <Hatching step={step} setStep={setStep} />
         </div>
       </main>
     </div>
