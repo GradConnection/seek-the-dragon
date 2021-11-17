@@ -7,8 +7,7 @@ import welcome from '../../components/hatchery/welcome';
 import Dragon from '../../components/shared/Dragon';
 
 export default function Hatchery() {
-
-  const [name, setName] = useState("Dragon");
+  const [name, setName] = useState('Dragon');
 
   return (
     <div className={styles.container}>
@@ -23,13 +22,9 @@ export default function Hatchery() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome
-        </h1>
+        <h1 className={styles.title}>Welcome</h1>
 
-        <p className={styles.description}>
-          Input your name
-        </p>
+        <p className={styles.description}>Input your name</p>
 
             <Dragon width='150px' height='150px' />
 
@@ -40,7 +35,6 @@ export default function Hatchery() {
           </div>
         </div>
       </main>
-
     </div>
-  )
+  );
 }
