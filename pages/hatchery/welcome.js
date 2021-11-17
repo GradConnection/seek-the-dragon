@@ -38,12 +38,9 @@ export default function Hatchery() {
 
         <p className={styles.description}>Input your name</p>
 
-            <Dragon width='150px' height='150px' />
+        <Dragon width="150px" height="150px" />
 
         <div className={styles.grid}>
-          <div className={styles.card}>
-            <Dragon width="100px" height="100px" />
-          </div>
           <div className={styles.card}>
             <input value={name} onChange={(e) => setName(e.target.value)} />
             <button onClick={onSave}>Save</button>

@@ -1,12 +1,13 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { ContextApp } from '../reducers';
 import styles from '../styles/Home.module.css';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import Dragon from '../components/shared/Dragon';
-import emptyStar from '../public/star_empty.png'
-import filledStar from '../public/star_filled.png'
-import animatedStar from '../public/star_animated.gif'
+import emptyStar from '../public/star_empty.png';
+import filledStar from '../public/star_filled.png';
+import animatedStar from '../public/star_animated.gif';
 
 function Profile() {
   const { state } = useContext(ContextApp);
@@ -18,7 +19,7 @@ function Profile() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setAnimateStar(false)
+      setAnimateStar(false);
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -26,18 +27,47 @@ function Profile() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <h1 className='text-2xl'>Hey, {name}</h1>
+        <h1 className="text-2xl">Hey, {name}</h1>
         <Dragon />
         <p className={'text-lg font-500'}>Level {level}</p>
         <div className="flex justify-center m-4">
-        <Image className="p-3" width={40} height={40} src={animateStar ? animatedStar : filledStar} alt={animatedStar}/> 
-        <Image className="p-3" width={40} height={40} src={animateStar ? animatedStar : filledStar} alt={animatedStar}/> 
-        <Image className="p-3" width={40} height={40} src={emptyStar} alt={emptyStar}/>
-        <Image className="p-3" width={40} height={40} src={emptyStar} alt={emptyStar}/>
-        <Image className="p-3" width={40} height={40} src={emptyStar} alt={emptyStar}/>
-       </div>
+          <Image
+            className="p-3"
+            width={40}
+            height={40}
+            src={animateStar ? animatedStar : filledStar}
+            alt={animatedStar}
+          />
+          <Image
+            className="p-3"
+            width={40}
+            height={40}
+            src={animateStar ? animatedStar : filledStar}
+            alt={animatedStar}
+          />
+          <Image
+            className="p-3"
+            width={40}
+            height={40}
+            src={emptyStar}
+            alt={emptyStar}
+          />
+          <Image
+            className="p-3"
+            width={40}
+            height={40}
+            src={emptyStar}
+            alt={emptyStar}
+          />
+          <Image
+            className="p-3"
+            width={40}
+            height={40}
+            src={emptyStar}
+            alt={emptyStar}
+          />
+        </div>
         <p>{secretName}</p>
-
       </main>
     </div>
   );
