@@ -52,7 +52,7 @@ export default function Congratulations() {
         You've earned it and it's great to see that your effort has finally paid
         off!
       </p>
-      <Dragon level={12} />
+      <Dragon />
       {isSubmitted ? (
         <div className="text-base font-bold pb-1">Thank you!</div>
       ) : (
