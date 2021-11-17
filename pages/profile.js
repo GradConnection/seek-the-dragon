@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styles from "../styles/Home.module.css";
-import profileStyles from "../styles/Profile.module.css";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -25,12 +24,6 @@ function Profile() {
         {/* <div className="container mx-auto"> */}
 
         {/* <h1 className={styles.title}>Welcome to SEEK The Dragon</h1> */}
-
-        <div className={profileStyles.row}>
-          <div className={profileStyles.column}>1 more contents</div>
-          <div className={profileStyles.column}>2</div>
-          <div className={profileStyles.column}>3</div>
-        </div>
 
         <p>Hey, {name}</p>
         <p>{level}</p>
