@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from '../../styles/Home.module.css';
 import Image from 'next/image';
 import welcome from '../../components/hatchery/welcome';
+import Dragon from '../../components/shared/Dragon';
 
 export default function Hatchery() {
 
@@ -32,8 +33,7 @@ export default function Hatchery() {
 
         <div className={styles.grid}>
           <div className={styles.card}>
-            {/* Dragon pic */}
-            {/* <Image src={""} alt="Click on me" width={256} height={338} />; */}
+            <Dragon width='100px' height='100px' />
           </div>
           <div className={styles.card}>
             <input value={name} onChange={(e) => setName(e.target.value)} />
