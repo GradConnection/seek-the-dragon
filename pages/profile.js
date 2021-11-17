@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
-import styles from "../styles/Home.module.css";
-import Head from "next/head";
-import Link from "next/link";
+import React, { useEffect, useContext } from 'react';
+import { ContextApp } from '../reducers';
+import styles from '../styles/Home.module.css';
+import Head from 'next/head';
+import Link from 'next/link';
 
 function Profile() {
-  let name = "Dragon name";
-  let level = 5;
-  let secretName = "The Future Great Architech";
+  const { state } = useContext(ContextApp);
+  console.log('state', state);
+  let name = state.profile.name;
+  let level = state.profile.level;
+  let secretName = 'The Future Great Architech';
 
   return (
     <div className={styles.container}>
