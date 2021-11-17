@@ -7,17 +7,17 @@ import adultDragon from "../../public/dragon_adult.png";
 
 const Dragon = ({ level = 0, width = "300px", height = "300px" }) => {
   let dragonImage = babyDragon;
-  if (level <= 3) {
+  if (level <= 2) {
     dragonImage = babyDragon;
-  } else if (level > 3 && level <= 7) {
+  } else if (level > 2 && level <= 5) {
     dragonImage = toddlerDragon;
-  } else if (level > 7 && level <= 12) {
+  } else if (level > 5 && level <= 7) {
     dragonImage = teenDragon;
-  } else if (level > 12) {
+  } else if (level > 7) {
     dragonImage = adultDragon;
   }
 
-  let levelWidth = 40 + level * 10;
+  let levelWidth = 40 + level * 5;
   if (levelWidth > 100) {
     levelWidth = 100;
   }

@@ -45,6 +45,14 @@ export default function Congratulations() {
             type="text"
             value={companyName}
           />
+          <button
+            id="ok-btn"
+            // onClick={Router.push("/congratulations")}
+            className="py-4 px-4 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+            // className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Submit
+          </button>
         </form>
       )}
     </div>

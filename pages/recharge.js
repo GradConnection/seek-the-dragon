@@ -104,7 +104,7 @@ export default function Recharge() {
             />
           </div>
           <div className="flex-1 ...">
-            <Dragon level={level} />
+            <Dragon width={500} height={500} level={level} />
             <p>Help!</p>
             <button onClick={() => setText(replyText1)}>
               1) I didn't get the job I wanted

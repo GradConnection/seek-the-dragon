@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./QuestItem.module.css";
+import Router from "next/router";
 
 const QuestItem = ({ job }) => {
   const { roleTitle, companyName, hasApplied, hasInterview, questResult } = job;
@@ -17,6 +18,7 @@ const QuestItem = ({ job }) => {
     <div className={styles.questItemContainer}>
       {showModal && (
         <div
+          style={{ position: "fixed", zIndex: 1 }}
           className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
           id="my-modal"
         ></div>
@@ -48,19 +50,28 @@ const QuestItem = ({ job }) => {
               </svg>
             </div>
             <h3 className="text-lg leading-6 font-medium text-gray-900">
-              Successful!
+              Interview results
             </h3>
             <div className="mt-2 px-7 py-3">
-              <p className="text-sm text-gray-500">
-                Account has been successfully registered!
-              </p>
+              <p className="text-sm text-gray-500">How did the interview go?</p>
             </div>
-            <div className="items-center px-4 py-3">
+            {/* <div className="items-center px-8 py-3"> */}
+            <div className="flex items-center justify-between">
               <button
                 id="ok-btn"
-                className="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+                onClick={Router.push("/recharge")}
+                // className="py-2 px-4 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
-                OK
+                Not this time
+              </button>
+              <button
+                id="ok-btn"
+                onClick={Router.push("/congratulations")}
+                // className="py-2 px-4 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              >
+                Got the job!
               </button>
             </div>
           </div>
