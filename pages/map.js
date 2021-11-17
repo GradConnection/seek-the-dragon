@@ -1,5 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import React, { useEffect } from "react";
+import Router from "next/router";
+import dragonmap from "/public/dragonmap.webp";
+import Image from "next/image";
+
+// import dragonmap from "/public/dragonmap.webp";
 
 function Map() {
   useEffect(() => {
@@ -30,20 +35,32 @@ function Map() {
       name: "Forest",
       color: "#05EFFF",
       circleSize: 50,
-      x: 200,
+      x: 250,
       y: 200,
       clicked: function () {
-        alert("This Forest circle has been clicked");
+        // alert("This Forest circle has been clicked");
+        Router.push("/");
       },
     });
     elements.push({
       name: "Castle",
       color: "#05EFFF",
       circleSize: 50,
-      x: 650,
-      y: 550,
+      x: 790,
+      y: 660,
       clicked: function () {
-        alert("This Castle circle has been clicked");
+        // alert("This Castle circle has been clicked");
+        Router.push("https://www.seek.com.au/jobs");
+      },
+    });
+    elements.push({
+      name: "Profile",
+      color: "#05EFFF",
+      circleSize: 50,
+      x: 525,
+      y: 950,
+      clicked: function () {
+        Router.push("/profile");
       },
     });
     elements.forEach(function (element) {
@@ -74,16 +91,14 @@ function Map() {
   }, []);
 
   return (
-    <div>
-      <img
-        style={{ height: 900, left: 0, top: 0 }}
-        src="https://static.vecteezy.com/system/resources/previews/003/758/266/original/fairytale-kingdom-map-medieval-village-background-fairy-tale-castle-infographic-elements-with-sea-mountains-forest-ship-fantasy-town-plan-with-unicorn-witch-mermaid-dragon-frog-prince-vector.jpg"
+    <div className="container mx-auto">
+      <Image
+        // style={{ height: 900, left: 0, top: 0 }}
+        // src="https://static.vecteezy.com/system/resources/previews/003/758/266/original/fairytale-kingdom-map-medieval-village-background-fairy-tale-castle-infographic-elements-with-sea-mountains-forest-ship-fantasy-town-plan-with-unicorn-witch-mermaid-dragon-frog-prince-vector.jpg"
+        src={dragonmap}
         alt="Map"
       />
-      <canvas
-        style={{ position: "absolute", left: 0, top: 0 }}
-        id="canvas"
-      ></canvas>
+      <canvas style={{ position: "absolute", top: 0 }} id="canvas"></canvas>
     </div>
   );
 }

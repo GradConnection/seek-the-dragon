@@ -22,6 +22,8 @@ function Profile() {
       </Head>
 
       <main className={styles.main}>
+        {/* <div className="container mx-auto"> */}
+
         {/* <h1 className={styles.title}>Welcome to SEEK The Dragon</h1> */}
 
         <div className={profileStyles.row}>
