@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import styles from '../../styles/Home.module.css';
-import Hatching from '../../components/hatchery/hatching';
-import Dragon from '../../components/shared/Dragon';
+import { useState } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../../styles/Home.module.css";
+import Hatching from "../../components/hatchery/hatching";
+import Dragon from "../../components/shared/Dragon";
 
 export default function Hatchery() {
   const [step, setStep] = useState(0);

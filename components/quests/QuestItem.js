@@ -23,10 +23,7 @@ const QuestItem = ({ job }) => {
           id="my-modal"
         ></div>
       )}
-      {"test" + showModal + " test"}
 
-      {/* position: fixed;
-    z-index: 1; */}
       {showModal && (
         <div
           style={{ position: "fixed", zIndex: 2 }}

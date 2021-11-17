@@ -9,7 +9,7 @@ import Image from "next/image";
 import Dragon from "/Components/shared/Dragon";
 import Typewriter from "typewriter-effect";
 
-export default function Recharge() {
+export default function Powerup() {
   const { state, dispatch } = useContext(ContextApp);
   let name = state.profile.name;
   let level = state.profile.level;
@@ -17,9 +17,8 @@ export default function Recharge() {
   // const [level, setLevel] = useState(0);
   const [text, setText] = useState(`Welcome, how may I help you?`);
 
-  const levelUp = (e, replyIn) => {
+  const levelUp = (e) => {
     e.preventDefault();
-    setText(replyIn);
     dispatch({
       type: "updateLevel",
       payload: {
@@ -53,61 +52,26 @@ export default function Recharge() {
           </div>
         </div>
         {/* <div className="container mx-auto"> */}
+        {/* <div className="container mx-auto"> */}
         <div className="flex">
           <div style={{ maxWidth: 400 }} className="flex-1 ...">
-            <Image src={wisedragon} alt="Map" />
             <p>Hey, {name}</p>
             <p>Level: {level}</p>
             <p>aka {secretName}</p>
-          </div>
-          <div className="flex-1 ...">
-            {/* <Typewriter
-              onInit={(typewriter) => {
-                typewriter
-                  .typeString({ text })
-                  .callFunction(() => {
-                    console.log("String typed out!");
-                  })
-                  .pauseFor(2500)
-                  .deleteAll()
-                  .callFunction(() => {
-                    console.log("All strings were deleted");
-                  })
-                  .start();
-              }}
-            /> */}
-            <Typewriter
-              options={{
-                strings: [text],
-                autoStart: true,
-                loop: false,
-                delay: 35,
-              }}
-            />
-          </div>
-          <div className="flex-1">
-            <Dragon width={500} height={500} />
-            <div>
-              <p>Help!</p>
-              <button onClick={(e) => levelUp(e, replyText1)}>
-                <p>1) I didn't get the job I wanted</p>
-              </button>
-              <br />
-              <button onClick={(e) => levelUp(e, replyText2)}>
-                <p> 2) I don't feel I am good enough to apply to this job</p>
-              </button>
-              <br />
-              <button onClick={(e) => levelUp(e, replyText3)}>
-                <p>3) Will I even get a job?</p>
-              </button>
-              <br />
-              <button onClick={levelUp}>
-                <p> Level Up</p>
-              </button>
+            <div className="circle" onClick={(e) => levelUp(e)}>
+              <div>Boost CV</div>
+            </div>
+            <div className="circle" onClick={(e) => levelUp(e)}>
+              <div>Boost Education</div>
+            </div>
+            <div className="circle" onClick={(e) => levelUp(e)}>
+              <div>Boost Industry knowledge</div>
             </div>
           </div>
+          <div className="flex-1 ...">
+            <Dragon width={500} height={500} />
+          </div>
         </div>
-        {/* <h1 className={styles.title}>Welcome to SEEK The Dragon</h1> */}
       </main>
     </div>
   );

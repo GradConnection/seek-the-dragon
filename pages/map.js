@@ -33,14 +33,14 @@ function Map() {
 
     var elements = [];
     elements.push({
-      name: "Forest",
+      name: "Power Up",
       color: "#FFF",
       circleSize: 50,
       x: 250,
       y: 200,
       clicked: function () {
         // alert("This Forest circle has been clicked");
-        Router.push("/");
+        Router.push("/powerup");
       },
     });
     elements.push({
@@ -84,6 +84,16 @@ function Map() {
         Router.push("/quests");
       },
     });
+    elements.push({
+      name: "Invite Friends",
+      color: "#FFF",
+      circleSize: 60,
+      x: 460,
+      y: 430,
+      clicked: function () {
+        Router.push("/quests");
+      },
+    });
     elements.forEach(function (element) {
       var circle = new makeCircle(
         context,
@@ -120,7 +130,7 @@ function Map() {
         alt="Map"
       />
       <canvas style={{ position: "absolute", top: 0 }} id="canvas"></canvas>
-      <div style={{ position: "absolute", top: 750, right: 320 }}>
+      <div style={{ position: "absolute", top: 760, right: 370 }}>
         <Dragon />
       </div>
     </div>

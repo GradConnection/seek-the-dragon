@@ -1,26 +1,26 @@
-import { useState, useContext } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import styles from '../../styles/Home.module.css';
-import Image from 'next/image';
-import Dragon from '../../components/shared/Dragon';
-import { ContextApp } from '../../reducers';
+import { useState, useContext } from "react";
+import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import styles from "../../styles/Home.module.css";
+import Image from "next/image";
+import Dragon from "../../components/shared/Dragon";
+import { ContextApp } from "../../reducers";
 
 export default function Hatchery() {
-  const [name, setName] = useState('Dragon');
+  const [name, setName] = useState("Dragon");
   const { state, dispatch } = useContext(ContextApp);
   const router = useRouter();
 
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch({
-      type: 'updateName',
+      type: "updateName",
       payload: {
         profile: { ...state.profile, name, level: 1 },
       },
     });
-    router.push('/map/');
+    router.push("/map/");
   };
 
   return (
