@@ -5,7 +5,7 @@ import toddlerDragon from '../../public/dragon_toddler.jpeg'
 import teenDragon from '../../public/dragon_teen.png'
 import adultDragon from '../../public/dragon_adult.png'
 
-const Dragon = ({level = 9, width = '500px', height = '500px' }) => {
+const Dragon = ({level = 0, width = '500px', height = '500px' }) => {
     
 let dragonImage = babyDragon
 if (level <= 3) {
