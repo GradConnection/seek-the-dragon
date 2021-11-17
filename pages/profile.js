@@ -21,14 +21,12 @@ function Profile({level = 1, secretName = "The Future Great Architect", name = "
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <p>Hey, {name}</p>
+        <h1 className='text-2xl'>Hey, {name}</h1>
         <Dragon />
         <p className={'text-lg font-500'}>Level {level}</p>
-        <div className="flex justify-center m-3 space-y-6 space-x-4">
-
-          <Image className="p-3" width={40} height={40} src={animateStar ? animatedStar : filledStar} alt={animatedStar}/> 
-          <Image className="p-3" width={40} height={40} src={animateStar ? animatedStar : filledStar} alt={animatedStar}/> 
- 
+        <div className="flex justify-center m-4">
+        <Image className="p-3" width={40} height={40} src={animateStar ? animatedStar : filledStar} alt={animatedStar}/> 
+        <Image className="p-3" width={40} height={40} src={animateStar ? animatedStar : filledStar} alt={animatedStar}/> 
         <Image className="p-3" width={40} height={40} src={emptyStar} alt={emptyStar}/>
         <Image className="p-3" width={40} height={40} src={emptyStar} alt={emptyStar}/>
         <Image className="p-3" width={40} height={40} src={emptyStar} alt={emptyStar}/>
