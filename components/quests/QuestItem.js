@@ -59,7 +59,7 @@ const QuestItem = ({ job }) => {
             <div className="flex items-center justify-between">
               <button
                 id="ok-btn"
-                onClick={Router.push("/recharge")}
+                onClick={() => Router.push("/recharge")}
                 // className="py-2 px-4 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
                 className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
@@ -67,7 +67,7 @@ const QuestItem = ({ job }) => {
               </button>
               <button
                 id="ok-btn"
-                onClick={Router.push("/congratulations")}
+                onClick={() => Router.push("/congratulations")}
                 // className="py-2 px-4 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               >
