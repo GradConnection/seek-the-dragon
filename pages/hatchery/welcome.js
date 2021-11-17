@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from '../../styles/Home.module.css';
 import Image from 'next/image';
-import welcome from '../../components/hatchery/welcome';
 import Dragon from '../../components/shared/Dragon';
 import { ContextApp } from '../../reducers';
 
@@ -13,17 +12,16 @@ export default function Hatchery() {
   const { state, dispatch } = useContext(ContextApp);
   const router = useRouter();
 
-  const onSave = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     dispatch({
       type: 'updateName',
       payload: {
-        profile: { ...state.profile, name },
+        profile: { ...state.profile, name, level: 1 },
       },
     });
     router.push('/map/');
   };
-
-  console.log('----state', state);
 
   return (
     <div className={styles.container}>
@@ -36,14 +34,21 @@ export default function Hatchery() {
       <main className={styles.main}>
         <h1 className={styles.title}>Welcome</h1>
 
-        <p className={styles.description}>Input your name</p>
-
-        <Dragon width="150px" height="150px" />
+        <Dragon level={0} />
 
         <div className={styles.grid}>
           <div className={styles.card}>
-            <input value={name} onChange={(e) => setName(e.target.value)} />
-            <button onClick={onSave}>Save</button>
+            <form onSubmit={onSubmit} className="flex flex-col items-center">
+              <div className="text-base font-bold pb-1">What is your name?</div>
+              <input
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your name"
+                className="focus:border-light-blue-500 focus:ring-1 focus:ring-light-blue-500 focus:outline-none w-full text-lg text-black placeholder-gray-500 border border-gray-200 rounded-md py-2 pl-2"
+                type="text"
+                value={name}
+              />
+              <button type="submit">Continue</button>
+            </form>
           </div>
         </div>
       </main>
