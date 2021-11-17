@@ -91,7 +91,7 @@ function Map() {
       x: 460,
       y: 430,
       clicked: function () {
-        Router.push("/quests");
+        Router.push("/friends");
       },
     });
     elements.forEach(function (element) {
