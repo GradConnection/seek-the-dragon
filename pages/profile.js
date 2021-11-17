@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
-import Head from "next/head";
-import Image from 'next/image';
-import Link from "next/link";
+import React, { useEffect, useContext } from 'react';
+import { ContextApp } from '../reducers';
+import styles from '../styles/Home.module.css';
+import Head from 'next/head';
+import Link from 'next/link';
 import Dragon from '../components/shared/Dragon';
 import emptyStar from '../public/star_empty.png'
 import filledStar from '../public/star_filled.png'
 import animatedStar from '../public/star_animated.gif'
 
-function Profile({level = 1, secretName = "The Future Great Architect", name = "Dragooooo"}) {
-  const [animateStar, setAnimateStar] = useState(true)
+function Profile() {
+  const { state } = useContext(ContextApp);
+  console.log('state', state);
+  let name = state.profile.name;
+  let level = state.profile.level;
+  let secretName = 'The Future Great Architech';
+  const [animateStar, setAnimateStar] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
