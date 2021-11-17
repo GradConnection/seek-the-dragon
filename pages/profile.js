@@ -11,7 +11,6 @@ import animatedStar from '../public/star_animated.gif';
 
 function Profile() {
   const { state } = useContext(ContextApp);
-  console.log('state', state);
   let name = state.profile.name;
   let level = state.profile.level;
   let secretName = 'The Future Great Architech';
