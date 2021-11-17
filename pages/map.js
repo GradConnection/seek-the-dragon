@@ -12,7 +12,7 @@ function Map() {
     // Make circle
     function makeCircle(context, name, x, y, color, circleSize) {
       context.font = "30px Arial";
-      context.fillStyle = "white";
+      context.fillStyle = color;
       context.fillText(name, x - circleSize, y - circleSize - 10);
       context.beginPath();
       context.lineWidth = 5;
@@ -34,7 +34,7 @@ function Map() {
     var elements = [];
     elements.push({
       name: "Forest",
-      color: "#05EFFF",
+      color: "#FFF",
       circleSize: 50,
       x: 250,
       y: 200,
@@ -45,7 +45,7 @@ function Map() {
     });
     elements.push({
       name: "Castle",
-      color: "#05EFFF",
+      color: "#FFF",
       circleSize: 50,
       x: 790,
       y: 660,
@@ -56,7 +56,7 @@ function Map() {
     });
     elements.push({
       name: "Profile",
-      color: "#05EFFF",
+      color: "#FFF",
       circleSize: 50,
       x: 525,
       y: 930,
@@ -66,7 +66,7 @@ function Map() {
     });
     elements.push({
       name: "Recharge",
-      color: "#05EFFF",
+      color: "#FFF",
       circleSize: 50,
       x: 160,
       y: 665,
@@ -75,13 +75,13 @@ function Map() {
       },
     });
     elements.push({
-      name: "Dragon Quest",
-      color: "#05EFFF",
-      circleSize: 50,
-      x: 950,
-      y: 160,
+      name: "Quests",
+      color: "#000",
+      circleSize: 110,
+      x: 1110,
+      y: 180,
       clicked: function () {
-        Router.push("/dragonquest");
+        Router.push("/quests");
       },
     });
     elements.forEach(function (element) {
@@ -120,7 +120,9 @@ function Map() {
         alt="Map"
       />
       <canvas style={{ position: "absolute", top: 0 }} id="canvas"></canvas>
-      <Dragon style={{ position: "absolute", top: 500, right: 500 }} />
+      <div style={{ position: "absolute", top: 750, right: 320 }}>
+        <Dragon />
+      </div>
     </div>
   );
 }
