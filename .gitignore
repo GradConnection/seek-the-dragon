@@ -1,4 +1,3 @@
-
 node_modules/.bin/browserslist
 # Logs
 logs
@@ -119,3 +118,13 @@ dist
 .yarn/install-state.gz
 .pnp.*
 .DS_Store
+
+# managed by sku
+.eslintrc
+.prettierrc
+coverage/
+dist-storybook/
+dist/
+report/
+tsconfig.json
+# end managed by sku
