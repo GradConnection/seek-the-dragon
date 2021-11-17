@@ -58,9 +58,19 @@ function Map() {
       color: "#05EFFF",
       circleSize: 50,
       x: 525,
-      y: 950,
+      y: 930,
       clicked: function () {
         Router.push("/profile");
+      },
+    });
+    elements.push({
+      name: "Recharge",
+      color: "#05EFFF",
+      circleSize: 50,
+      x: 160,
+      y: 665,
+      clicked: function () {
+        Router.push("/recharge");
       },
     });
     elements.forEach(function (element) {
