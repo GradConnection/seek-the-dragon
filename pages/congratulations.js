@@ -32,7 +32,7 @@ export default function Congratulations() {
             </p>
             <Dragon level={12} />
             {isSubmitted ? (
-                <div>Thank you!</div>
+                <div className="text-base font-bold pb-1">Thank you!</div>
             ) : (
                 <form onSubmit={onSubmit} className="flex flex-col items-center">
                     <div className="text-base font-bold pb-1">
