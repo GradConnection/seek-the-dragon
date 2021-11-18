@@ -39,7 +39,9 @@ export default function Hatchery() {
         <div className={styles.grid}>
           <div className={styles.card}>
             <form onSubmit={onSubmit} className="flex flex-col items-center">
-              <div className="text-base font-bold pb-1">What is your name?</div>
+              <div className="text-base font-bold pb-1">
+                What is your dragon's name?
+              </div>
               <input
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"

@@ -8,6 +8,7 @@ import wisedragon from "/public/wisedragon.gif";
 import Image from "next/image";
 import Dragon from "/Components/shared/Dragon";
 import Typewriter from "typewriter-effect";
+import RewardModal from "../components/shared/RewardModal";
 
 export default function Powerup() {
   const { state, dispatch } = useContext(ContextApp);
@@ -16,7 +17,8 @@ export default function Powerup() {
 
   // const [level, setLevel] = useState(0);
   const [text, setText] = useState(`Welcome, how may I help you?`);
-
+  const [showModal, setShowModal] = useState(false);
+  
   const levelUp = (e) => {
     e.preventDefault();
     dispatch({
@@ -27,11 +29,20 @@ export default function Powerup() {
     });
   };
 
+  const handleLevelUpOnCV = (e) => {
+    levelUp(e);
+
+  if (level === 2 || level === 5 || level === 7) {
+    setShowModal(true)
+  }
+  };
+
   // let level = 1;
   let secretName = "The Future Great Architech";
   let replyText1 = `This experience will grow you.`;
   let replyText2 = `This is what you’re going through, not who you are.`;
   let replyText3 = `This is tough, but you are tougher.`;
+
   return (
     <div>
       <Head>
@@ -43,10 +54,11 @@ export default function Powerup() {
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
       </Head>
+      <RewardModal showDragon modalTitle={"You're leveling up!"} modalDescription={"Congratulations, you've reached the next level!"} showModal={showModal} setShowModal={setShowModal}  />
 
       {/* <main className={styles.main}> */}
       <main className="container mx-auto">
-        <div className="menu">
+        <div className="menu hover:bg-blue-700">
           <div>
             <Link href="/map">Menu</Link>
           </div>
@@ -58,13 +70,13 @@ export default function Powerup() {
             <p>Hey, {name}</p>
             <p>Level: {level}</p>
             <p>aka {secretName}</p>
-            <div className="circle" onClick={(e) => levelUp(e)}>
+            <div className="circle bg-blue-500 hover:bg-blue-700 text-white" onClick={(e) => {handleLevelUpOnCV(e)}}>
               <div>Boost CV</div>
             </div>
-            <div className="circle" onClick={(e) => levelUp(e)}>
+            <div className="circle bg-blue-500 hover:bg-blue-700 text-white" onClick={(e) => levelUp(e)}>
               <div>Boost Education</div>
             </div>
-            <div className="circle" onClick={(e) => levelUp(e)}>
+            <div className="circle bg-blue-500 hover:bg-blue-700 text-white" onClick={(e) => levelUp(e)}>
               <div>Boost Industry knowledge</div>
             </div>
           </div>

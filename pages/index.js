@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import Link from "next/link";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="text-4xl mb-4">Welcome to SEEK</h1>
+        <h1 className="text-4xl mb-4">Login to Start Seeking the Dragon</h1>
 
         <div className="w-full max-w-xs">
           <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

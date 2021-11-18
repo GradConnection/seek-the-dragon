@@ -75,11 +75,11 @@ function Map() {
       },
     });
     elements.push({
-      name: "Quests",
+      name: "Seek the Dragon",
       color: "#000",
       circleSize: 110,
-      x: 1110,
-      y: 180,
+      x: 1430,
+      y: 160,
       clicked: function () {
         Router.push("/quests");
       },
