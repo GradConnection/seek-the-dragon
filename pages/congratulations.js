@@ -1,31 +1,53 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import Dragon from "../components/shared/Dragon"
-import styles from "./congratulations.module.css"
+import Dragon from "../components/shared/Dragon";
+import styles from "./congratulations.module.css";
+import ReactCanvasConfetti from "react-canvas-confetti";
+
+const style = {
+  position: "fixed",
+  pointerEvents: "none",
+  width: "100%",
+  height: "100%",
+  top: 0,
+  left: 0,
+};
 
 const initialState = {
   companyName: "",
   isSubmitted: false,
-}
+};
 
 export default function Congratulations() {
-  const [state, setState] = useState(initialState)
-  const { companyName, isSubmitted } = state
+  const [state, setState] = useState(initialState);
+  const { companyName, isSubmitted } = state;
+  const [fire, setFire] = useState(false);
+  const [reset, setReset] = useState(false);
 
   const onSubmit = (event) => {
-    event.preventDefault()
-    setState({ ...state, isSubmitted: true })
-  }
+    event.preventDefault();
+    setState({ ...state, isSubmitted: true });
+  };
 
   const onChange = (event) => {
-    const { value } = event.target
-    setState({ ...state, companyName: value })
-  }
+    const { value } = event.target;
+    setState({ ...state, companyName: value });
+  };
+  const onFire = () => {
+    console.log("do something after fire");
+  };
+  const onReset = () => {
+    console.log("do something after reset");
+  };
+  const onDecay = () => {
+    console.log("do something after animation setr reset to true");
+    setReset(true);
+  };
 
-  const congratsHeading = "🎉 Congrats on your new job! 🎉"
-  const congratsCompany = `🎉 Congrats on your new job at ${companyName} 🎉`
+  const congratsHeading = "🎉 Congrats on your new job! 🎉";
+  const congratsCompany = `🎉 Congrats on your new job at ${companyName} 🎉`;
   const congratsWords =
-    "You've earned it and it's great to see that your effort has finally paid off!"
+    "You've earned it and it's great to see that your effort has finally paid off!";
 
   return (
     <div
@@ -59,15 +81,27 @@ export default function Congratulations() {
             value={companyName}
           />
           <button
-            id="ok-btn"
-            // onClick={Router.push("/congratulations")}
-            className="py-4 px-4 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
-            // className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className={
+              "bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 mx-4 rounded w-full"
+            }
+            onClick={() => setFire(true)}
           >
             Submit
           </button>
         </form>
       )}
+      <ReactCanvasConfetti // set the styles as for a usual react component
+        style={style}
+        // set the class name as for a usual react component
+        className={"yourClassName"}
+        // if value in this.state.fire cast to the logical true and will differ from the previous, then will be called new animation
+        fire={fire}
+        // if value in this.state.reset cast to the logical true and will differ from the previous, then will be cleared canvas
+        reset={reset}
+        onFire={onFire}
+        onDecay={onDecay}
+        onReset={onReset}
+      />
     </div>
-  )
+  );
 }
