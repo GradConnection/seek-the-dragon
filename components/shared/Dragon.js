@@ -1,32 +1,32 @@
-import React, { useContext, useState } from "react";
-import { ContextApp } from "/reducers";
-import Head from "next/head";
-import Image from "next/image";
-import babyDragon from "../../public/dragon_baby.png";
-import toddlerDragon from "../../public/dragon_toddler.jpeg";
-import teenDragon from "../../public/dragon_teen.png";
-import adultDragon from "../../public/dragon_adult.png";
+import React, { useContext, useState } from "react"
+import { ContextApp } from "/reducers"
+import Head from "next/head"
+import Image from "next/image"
+import babyDragon from "../../public/dragon_baby.png"
+import toddlerDragon from "../../public/dragon_toddler.png"
+import teenDragon from "../../public/dragon_teen.png"
+import adultDragon from "../../public/dragon_adult.png"
 
 const Dragon = ({ width = "300px", height = "300px" }) => {
-  const { state, dispatch } = useContext(ContextApp);
+  const { state, dispatch } = useContext(ContextApp)
 
-  let level = state.profile.level;
-  let name = state.profile.name;
+  let level = state.profile.level
+  let name = state.profile.name
 
-  let dragonImage = babyDragon;
+  let dragonImage = babyDragon
   if (level <= 2) {
-    dragonImage = babyDragon;
+    dragonImage = babyDragon
   } else if (level > 2 && level <= 5) {
-    dragonImage = toddlerDragon;
+    dragonImage = toddlerDragon
   } else if (level > 5 && level <= 7) {
-    dragonImage = teenDragon;
+    dragonImage = teenDragon
   } else if (level > 7) {
-    dragonImage = adultDragon;
+    dragonImage = adultDragon
   }
 
-  let levelWidth = 40 + level * 5;
+  let levelWidth = 40 + level * 5
   if (levelWidth > 100) {
-    levelWidth = 100;
+    levelWidth = 100
   }
 
   return (
@@ -37,7 +37,7 @@ const Dragon = ({ width = "300px", height = "300px" }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dragon;
+export default Dragon

@@ -1,38 +1,51 @@
-import { useState } from "react";
+import { useState } from "react"
 
-import Dragon from "../components/shared/Dragon";
+import Dragon from "../components/shared/Dragon"
+import styles from "./congratulations.module.css"
 
 const initialState = {
   companyName: "",
   isSubmitted: false,
-};
+}
 
 export default function Congratulations() {
-  const [state, setState] = useState(initialState);
-  const { companyName, isSubmitted } = state;
+  const [state, setState] = useState(initialState)
+  const { companyName, isSubmitted } = state
 
   const onSubmit = (event) => {
-    event.preventDefault();
-    setState({ ...state, isSubmitted: true });
-  };
+    event.preventDefault()
+    setState({ ...state, isSubmitted: true })
+  }
 
   const onChange = (event) => {
-    const { value } = event.target;
-    setState({ ...state, companyName: value });
-  };
+    const { value } = event.target
+    setState({ ...state, companyName: value })
+  }
+
+  const congratsHeading = "🎉 Congrats on your new job! 🎉"
+  const congratsCompany = `🎉 Congrats on your new job at ${companyName} 🎉`
+  const congratsWords =
+    "You've earned it and it's great to see that your effort has finally paid off!"
 
   return (
-    <div className="flex py-24 flex-col bg-blue-50 items-center h-screen">
-      <h2 className="text-base font-bold text-4xl pb-6">
-        🎉 Congrats on your new job! 🎉
-      </h2>
-      <p className="text-base ">
-        You've earned it and it's great to see that your effort has finally paid
-        off!
-      </p>
+    <div
+      className={`flex py-24 flex-col items-center h-screen ${styles.container}`}
+    >
+      {isSubmitted && <div className={styles.banner}>{companyName}</div>}
+      {!isSubmitted && (
+        <h2 className="text-base font-bold text-4xl pb-6">{congratsHeading}</h2>
+      )}
+      {isSubmitted && <div className={styles.spacer}></div>}
+      {!isSubmitted && <p className="text-base">{congratsWords}</p>}
       <Dragon />
+
       {isSubmitted ? (
-        <div className="text-base font-bold pb-1">Thank you!</div>
+        <div className="text-base font-bold pb-1">
+          <h2 className="text-base font-bold text-2xl mt-8 mb-4 text-center">
+            {congratsCompany}
+          </h2>
+          <p className="text-base text-center">{congratsWords}</p>
+        </div>
       ) : (
         <form onSubmit={onSubmit} className="flex flex-col items-center">
           <div className="text-base font-bold pb-1">
@@ -56,5 +69,5 @@ export default function Congratulations() {
         </form>
       )}
     </div>
-  );
+  )
 }
