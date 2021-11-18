@@ -1,0 +1,52 @@
+div.container {
+  background: rgba(239, 246, 255, 0.5);
+}
+
+div.spacer {
+  margin-top: 95px;
+}
+
+.banner {
+  position: absolute;
+  display: block;
+  margin-top: 0px;
+  min-width: 400px;
+  height: 60px;
+  border: 1px solid #438cf2;
+  font: normal 30px/60px "Rye";
+  text-align: center;
+  color: #fff;
+  background: #438cf2;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.15) inset, 0 6px 10px rgba(0, 0, 0, 0.15);
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+/* rgba(153, 187, 34, 1);  #688fc5 #cb0606 */
+
+.banner::before,
+.banner::after {
+  content: "";
+  position: absolute;
+  left: -70px;
+  top: 24px;
+  display: block;
+  width: 40px;
+  height: 0px;
+  border: 30px solid #438cf2;
+  border-right: 20px solid #438cf2;
+  border-bottom-color: #438cf2;
+  border-left-color: transparent;
+  transform: rotate(-5deg);
+  box-sizing: content-box;
+  z-index: -1;
+}
+
+.banner::after {
+  left: auto;
+  right: -70px;
+  border-left: 20px solid #438cf2;
+  border-right: 30px solid transparent;
+  transform: rotate(5deg);
+}
